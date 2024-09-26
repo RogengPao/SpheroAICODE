@@ -339,55 +339,6 @@ async function displayArea(areaId) {
 }
 
 
-async function interactWithAttractions() {
-    clearMatrix();
-    await rideAttraction();
-    await foodAttraction();
-    await animalAttraction();
-    await craftAttraction();
-}
 
-async function rideAttraction() {
-    await speak("Let's go on a ride!");
-	playMatrixAnimation(4);
-	await roll(0, 50, 3);
-	playMatrixAnimation(6);
-    await Sound.Ambience.Park.play(true);
-}
-
-async function foodAttraction() {
-    await speak("Time for some delicious food!");
-	playMatrixAnimation(4);
-	await roll(90, 50, 3);
-    playMatrixAnimation(1);
-    await delay(2);
-    await speak("Yummy!");
-}
-
-async function animalAttraction() {
-    await speak("Let's visit the animal pavilion!");
-	playMatrixAnimation(4);
-	await roll(0, 50, 3);
-    playMatrixAnimation(2);
-	await Sound.Animal.BabyBird.play(true);
-	await delay(2);
-}
-
-async function craftAttraction() {
-    await speak("Lets go to the craft area!");
-	playMatrixAnimation(4);
-	await roll(270, 50, 3);
-	playMatrixAnimation(3);
-	await delay(2);
-	await speak("Its beautiful!");
-}
-
-
-async function endShow() {
-    setMainLed(SHOW_COLORS.gold);
-    await speak("Thank you for visiting the Perth Royal Show!");
-    await spin(720, 2);
-    playMatrixAnimation(7);
-}
 
 
